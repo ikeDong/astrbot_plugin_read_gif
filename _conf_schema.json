@@ -1,0 +1,33 @@
+{
+  "enabled": {
+    "type": "bool",
+    "description": "启用 GIF 宫格转换",
+    "hint": "关闭后插件将不做任何处理，GIF 保持原样传给 LLM",
+    "default": true
+  },
+  "grid_preset": {
+    "type": "string",
+    "description": "宫格预设",
+    "hint": "自动：根据 GIF 时长智能选择最合适的宫格数",
+    "default": "auto",
+    "options": ["auto", "4", "9", "16", "25"]
+  },
+  "max_output_size": {
+    "type": "int",
+    "description": "宫格图长边限制（像素）",
+    "hint": "宫格输出图的最大长边分辨率，超出会自动等比缩放。越大越清晰，但消耗更多 token",
+    "default": 1536
+  },
+  "auto_cleanup_interval_min": {
+    "type": "int",
+    "description": "自动清理缓存间隔（分钟）",
+    "hint": "0 表示关闭自动清理",
+    "default": 60
+  },
+  "cache_max_age_hours": {
+    "type": "int",
+    "description": "缓存文件最大保留时长（小时）",
+    "hint": "超过此时长的缓存文件会在自动清理时被删除",
+    "default": 24
+  }
+}
